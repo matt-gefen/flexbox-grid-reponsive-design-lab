@@ -18,19 +18,12 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: rgb(114, 250, 173);
 /* Use a system font, if none are available use an available sans-sarif   font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
-  /* display: grid;
-  font-size: 4.5vw;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 33vh 33vh 33vh;;
-  grid-template-areas: 
-  "top top top"
-  ". content ."
-  "bottom bottom bottom" */
+  /* display: grid;*/
   display: flex;
   font-size: 4.5vw;
   justify-content: center;
@@ -39,6 +32,16 @@ body {
 }
 
 main {
-  display: flex;
-  border: solid;
+  display: grid;
+  font-size: 4.5vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;;
+  /* grid-template-areas: 
+  "top top top"
+  ". content ."
+  "bottom bottom bottom" */
+  border: solid black;
+  min-height: 55vh;
+  min-width: 40vw;
+  justify-content: center;
 }
