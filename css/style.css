@@ -34,14 +34,29 @@ body {
 main {
   display: grid;
   font-size: 4.5vw;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr 1fr;;
-  /* grid-template-areas: 
-  "top top top"
-  ". content ."
-  "bottom bottom bottom" */
+  /* grid-template-columns: 0.25fr 1fr 0.25fr; */
+  grid-template-rows: 30vh 20vh 20vh;
+  grid-template-areas: 
+  "photo"
+  "content"
+  "bottom";
   border: solid black;
   min-height: 55vh;
-  min-width: 40vw;
+  min-width: 45vw;
   justify-content: center;
+}
+
+#user-image {
+  /* object-fit: cover; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: photo;
+}
+#profile {
+  border-radius: 50%;
+  border: solid;
+  border-color: snow;
+  width: 50%;
+  max-height: 100%;
 }
