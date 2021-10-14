@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Varela+Round&display=swap');
 
 html {
   box-sizing: border-box
@@ -20,92 +20,233 @@ html {
 }
 
 body {
-  background-color: rgb(52, 69, 59);
+  background-color: rgb(14, 18, 15);
 /* Use a system font, if none are available use an available sans-sarif   font */
-font-family: 'Josefin Sans', sans-serif; 
+font-family: 'Varela Round', sans-serif;
   margin: 0;
-  /* display: grid;*/
-  display: flex;
   font-size: 4.5vw;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+  /* max-width: 75%; */
+  /* max-height: 75%; */
 
-main {
-  display: grid;
-  font-size: 4.5vw;
-  background-color: rgb(114, 250, 173);
-  grid-template-columns: 0.20fr 1fr 1fr 0.20fr;
-  grid-template-rows: 30vh 10vh 5vh 5vh 20vh;
-  grid-template-areas: 
-  ". photo photo ."
-  ". name name ."
-  ". star star ."
-  ". occu occu ."
-  ". bottom bottom .";
-  border: solid whitesmoke;
-  min-height: 55vh;
-  min-width: 40vw;
-  max-width: 60vw;
-  justify-content: center;
-}
-
-#user-image {
-  /* object-fit: cover; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-area: photo;
-}
-#profile {
-  border-radius: 50%;
-  border: solid;
-  border-color: snow;
-  max-width: 100%;
-  max-height: 75%;
-}
-#name {
-  grid-area: name;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  text-align:center;
-}
-#star-rating {
-  grid-area: star;
-  display: inline-flex;
-  justify-content: center;
-  align-content: center;
-  height: 100%;
-}
-
-.star {
-  min-height: 50%;
-  /* min-width: 50%; */
-  max-height: 50%;
-  max-width: 50%;
-}
-
-#occu-rating {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-area: occu;
-}
-
-#occupation {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  font-size:3vh;
-}
-
-
-@media only screen and (min-width: 1024px) {
-  main {
-    background-color: rgb(175, 250, 255);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 40px;
   }
-}
+
+  .container {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 50px 75% 50px;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . ."
+      ". content ."
+      ". . .";
+  }
+  
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.7fr 0.6fr 0.3fr 0.6fr 0.7fr 1.6fr;
+    /* gap: 0px 0px; */
+    grid-auto-flow: row;
+    grid-template-areas:
+      "profile"
+      "name"
+      "stars"
+      "occu"
+      "rate"
+      "images";
+    grid-area: content;
+    background-color: rgb(190, 255, 218);
+    height: 75%;
+  }
+  
+  .profile { 
+    grid-area: profile;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  #profile-image {
+    border-radius: 50%;
+    border: solid 20px;
+    border-color: snow;
+    max-width: 100%;
+    max-height: 75%;
+  }
+
+  
+  .name { 
+    grid-area: name; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    font-size: 6vw;
+    font-weight: bold;
+  }
+  
+  .stars { 
+    grid-area: stars; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(244, 255, 243);
+    max-height: fit-content;
+  }
+
+  .star {
+    min-height: 30%;
+    /* min-width: 50%; */
+    max-height: 30%;
+    max-width: 30%;
+  }
+  
+  .occu { 
+    grid-area: occu;
+    font-size: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  #threat {
+    font-size: 2.5vw;
+  }
+  
+  .rate { 
+    grid-area: rate;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    font-size: 3vw;
+  }
+
+  #rate-amount {
+    font-weight: bold;
+  }
+
+  #real-rate {
+    font-size: 1.5vw;
+  }
+  
+  .images { 
+    grid-area: images; 
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "ball parchment";
+    /* background-color: tan; */
+  }
+  .desc {
+    display: none;
+  }
+
+  .ball {
+    grid-area: ball;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(117, 255, 186);
+  }
+  .parchment {
+    grid-area: parchment;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(74, 211, 143);
+  }
+
+  #ball {
+    min-height: 50%;
+    /* min-width: 50%; */
+    max-height:100%;
+    max-width: 50%;
+  }
+  #parchment {
+    margin-top: 20px;
+    min-height: 50%;
+    /* min-width: 50%; */
+    max-height:90%;
+    max-width: 50%;
+  }
+  
+  @media only screen and (min-width: 750px) {
+    .container {
+      display: grid; 
+      grid-template-columns: 0.5fr 2.3fr 0.2fr; 
+      grid-template-rows: 0.3fr 1.2fr 1.5fr; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        ". . ."
+        ". content ."
+        ". . ."; 
+    }
+    .content {
+      display: grid; 
+      grid-template-columns: 1.5fr 0.5fr 1fr; 
+      grid-template-rows: 1.3fr 0.7fr 0.7fr 1.3fr 1fr; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        "profile name name"
+        "profile stars stars"
+        "profile occu occu"
+        "images desc desc"
+        "images rate rate"; 
+      grid-area: content; 
+    }
+    .profile { 
+      grid-area: profile; 
+
+    }
+    .images { 
+      grid-area: images; 
+    }
+    .name { 
+      grid-area: name;
+      font-size: 5vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 40px;
+      background-color:rgb(155, 242, 193);
+    }
+    .stars { 
+      grid-area: stars; 
+      background-color:rgb(155, 242, 193);
+    }
+    .occu { 
+      grid-area: occu;
+      background-color:rgb(155, 242, 193); 
+      font-size: 2vw;
+    }
+    .desc {
+      display: flex;
+      grid-area: desc;
+      font-size: 2vw;
+      color: grey;
+      justify-content: center;
+      padding: 10px;
+      background-color:rgb(155, 242, 193); 
+
+    }
+    .rate { 
+      grid-area: rate;
+      background-color:rgb(155, 242, 193);
+      font-size: 2vw;
+    }
+    #real-rate {
+      font-size: 1vw;
+    }
+
+    #threat {
+      font-size: 1.5vw;
+    }
+  }
