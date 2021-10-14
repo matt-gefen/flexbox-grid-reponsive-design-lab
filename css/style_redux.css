@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  background-color: rgb(52, 69, 59);
+  background-color: rgb(14, 18, 15);
 /* Use a system font, if none are available use an available sans-sarif   font */
 font-family: 'Varela Round', sans-serif;
   margin: 0;
@@ -33,7 +33,7 @@ font-family: 'Varela Round', sans-serif;
   .container {
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 0.3fr 2.4fr 0.3fr;
+    grid-template-rows: 50px 75% 50px;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -45,8 +45,8 @@ font-family: 'Varela Round', sans-serif;
   .content {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.7fr 0.6fr 0.4fr 0.4fr 0.7fr 1.5fr;
-    gap: 0px 0px;
+    grid-template-rows: 1.7fr 0.6fr 0.3fr 0.6fr 0.7fr 1.6fr;
+    /* gap: 0px 0px; */
     grid-auto-flow: row;
     grid-template-areas:
       "profile"
@@ -91,7 +91,7 @@ font-family: 'Varela Round', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(244, 255, 243);
     max-height: fit-content;
   }
 
@@ -174,3 +174,72 @@ font-family: 'Varela Round', sans-serif;
     max-width: 50%;
   }
   
+  @media only screen and (min-width: 750px) {
+    .container {
+      display: grid; 
+      grid-template-columns: 0.5fr 2.3fr 0.2fr; 
+      grid-template-rows: 0.3fr 1.2fr 1.5fr; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        ". . ."
+        ". content ."
+        ". . ."; 
+    }
+    .content {
+      display: grid; 
+      grid-template-columns: 1.5fr 0.5fr 1fr; 
+      grid-template-rows: 1.3fr 0.7fr 0.7fr 1.3fr 1fr; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        "profile name name"
+        "profile stars stars"
+        "profile occu occu"
+        "images desc desc"
+        "images rate rate"; 
+      grid-area: content; 
+    }
+    .profile { 
+      grid-area: profile; 
+
+    }
+    .images { 
+      grid-area: images; 
+    }
+    .name { 
+      grid-area: name;
+      font-size: 5vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 40px;
+      background-color:rgb(155, 242, 193);
+    }
+    .stars { 
+      grid-area: stars; 
+      background-color:rgb(155, 242, 193);
+    }
+    .occu { 
+      grid-area: occu;
+      background-color:rgb(155, 242, 193); 
+      font-size: 2vw;
+    }
+    .desc {
+      display: flex;
+      grid-area: desc;
+      font-size: 2vw;
+      color: grey;
+      justify-content: center;
+      padding: 10px;
+      background-color:rgb(155, 242, 193); 
+
+    }
+    .rate { 
+      grid-area: rate;
+      background-color:rgb(155, 242, 193);
+      font-size: 2vw;
+    }
+    #real-rate {
+      font-size: 1vw;
+    }
+  }
