@@ -37,7 +37,7 @@ main {
   font-size: 4.5vw;
   background-color: rgb(114, 250, 173);
   grid-template-columns: 0.20fr 1fr 1fr 0.20fr;
-  grid-template-rows: 30vh 15vh 10vh 10vh 20vh;
+  grid-template-rows: 30vh 10vh 5vh 5vh 20vh;
   grid-template-areas: 
   ". photo photo ."
   ". name name ."
@@ -73,14 +73,18 @@ main {
   text-align:center;
 }
 #star-rating {
-  display: flex;
   grid-area: star;
+  display: inline-flex;
   justify-content: center;
   align-content: center;
+  height: 100%;
 }
 
 .star {
-  max-height: 30%;
+  min-height: 50%;
+  /* min-width: 50%; */
+  max-height: 50%;
+  max-width: 50%;
 }
 
 #occu-rating {
