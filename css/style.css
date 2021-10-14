@@ -231,9 +231,10 @@ font-family: 'Varela Round', sans-serif;
     .desc {
       display: flex;
       grid-area: desc;
-      font-size: 2vw;
+      font-size: 1.2vw;
       color: grey;
       justify-content: center;
+      align-items: center;
       padding: 10px;
       background-color:rgb(155, 242, 193); 
 
