@@ -144,6 +144,9 @@ font-family: 'Varela Round', sans-serif;
     "ball parchment";
     /* background-color: tan; */
   }
+  .desc {
+    display: none;
+  }
 
   .ball {
     grid-area: ball;
