@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Varela+Round&display=swap');
+
+body {
+  background-color: rgb(14, 18, 15);
+/* Use a system font, if none are available use an available sans-sarif   font */
+  font-family: 'Varela Round', sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . ."
+    ". card card card ."
+    ". card card card ."
+    ". . . . .";
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "profile profile name name"
+    "profile profile rating-occu rating-occu"
+    "profile profile desc desc"
+    "images images rate rate";
+  grid-area: card;
+  background-color: rgb(190, 255, 218);
+}
+
+.name { 
+  grid-area: name;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 3vw;
+}
+
+.rating-occu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". star ."
+    "occu occu occu";
+  grid-area: rating-occu;
+}
+
+.stars { 
+  grid-area: star;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: fit-content;
+}
+
+.star {
+  min-height: 50%;
+  /* min-width: 50%; */
+  max-height: 50%;
+  max-width: 20%;
+}
+
+.occu { 
+  grid-area: occu;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5vw;
+}
+
+.desc { 
+  grid-area: desc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 1vw;
+  font-style: italic;
+}
+
+.rate { 
+  grid-area: rate;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1vw;
+}
+
+#real-rate {
+  margin-top: 10px;
+  font-weight: normal;
+}
+
+.profile { 
+  grid-area: profile;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+#profile-image {
+  border-radius: 50%;
+  border: solid 15px;
+  border-color: snow;
+  max-width: 75%;
+  max-height: 75%;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "ball parchment"
+    "ball parchment"
+    "ball parchment";
+  grid-area: images;
+  background-color: #9DFFC7;
+}
+
+.ball { 
+  grid-area: ball; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parchment { 
+  grid-area: parchment;
+  display: flex;
+  /* margin-top: 5px; */
+  justify-content: center;
+  align-items: center;
+  background-color: #7DFFB6;
+}
+
+#ball {
+max-width: 50%;
+}
+#parchment {
+  max-width: 50%;
+}
+
+.off-color {
+  background-color: #E3FFEF;
+}
+
+@media only screen and (min-width: 750px) {
